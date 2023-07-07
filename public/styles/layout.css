@@ -5,8 +5,12 @@
  */
 html {
   box-sizing: border-box;
+  font-family: "Source Sans 3", sans-serif;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -23,3 +27,4 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
