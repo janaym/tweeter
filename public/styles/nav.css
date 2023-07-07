@@ -1,8 +1,23 @@
+/* Nav bar properties */
 nav {
-  background-color: #4155A1;
-  font-c
+  height: 120px;
+  width: 100%;
+  position: fixed;
+  background-color: #4056A1;
+  color: #ffffff;
   padding-left: 1.5em;
   padding-right: 1.5em;
   display:flex;
   justify-content: space-between;
+  align-items: center;
 }
+
+nav > span {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* change font for tweeter logo */
+#logo {
+  font-family: Bungee, sans-serif;
+ }
