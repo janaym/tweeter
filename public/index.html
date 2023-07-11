@@ -19,6 +19,7 @@
     <!-- App JS -->
    
     <script type="text/javascript" src="/scripts/client.js"></script>
+    
 
     <!-- external fonts bungee and source sans 3 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,14 +55,16 @@
       <h2>Compose Tweet</h2>
       <form action="/tweets/" method="post">
         <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text" placeholder="Hello, world!", maxlength="140"></textarea>
+        <textarea name="text" id="tweet-text" placeholder="Hello, world!"></textarea>
         <div>
           <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
+          <output name="counter" class="counter" for="tweet-text">0</output>
         </div>
       </form>
     </section>
   </main>
 
+
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </body>
 </html>
