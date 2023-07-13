@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css"/>
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -39,7 +40,7 @@
       </span>
     </nav>
 
-    <header>
+    <header class="page-header">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -51,16 +52,44 @@
 
     <!-- Page-specific (main) content here -->
   <main class="container">
+
+    <!-- Form to create new tweet -->
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
       <form action="/tweets/" method="post">
         <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text" placeholder="Hello, world!"></textarea>
+        <textarea name="text" id="tweet-text"></textarea>
         <div>
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">0</output>
         </div>
       </form>
+    </section>
+
+    <!-- tweet feed -->
+    <section class="tweet-container">
+
+      <article>
+        <header>
+          <span class="user-header">
+            <i class="fa-solid fa-dog"></i>
+            <span>Mr. D. Og</span>
+          </span>
+          <span class="user-id">@woofwoof</span>
+        </header>
+
+        <p> Bork! Bork bork bork! Bark bork! Bark bark bork bork! </p>
+
+        <footer>
+          <span>10 days ago</span>
+          <span class="icon-bar">
+            <i class="fa-solid fa-flag" style="color: #"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </span>
+        </footer>
+       
+      </article>
     </section>
   </main>
 

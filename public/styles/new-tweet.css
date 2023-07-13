@@ -1,10 +1,7 @@
-.new-tweet {
-  display: flex;
-  flex-direction: column;
-}
+
 
 .new-tweet > form {
-  input-width: 100%;
+  width: 100%;
   font-weight: 800;
 
   display: flex;
@@ -28,6 +25,7 @@
   border: none; 
   border-bottom:3px solid #545149;
   margin-bottom: 10px;
+  padding: 20px;
 }
 
 /*style button*/

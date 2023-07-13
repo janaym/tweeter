@@ -1,0 +1,50 @@
+article {
+  border: 3px solid #545149;
+  margin-top: 20px
+}
+
+article > header {
+  margin: 20px 20px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ 
+}
+
+.user-header {
+  font-weight: 200;
+}
+
+.user-id {
+  color: #CCD1E5;
+}
+
+article > p {
+  border-bottom: 3px solid #545149;
+  margin: 10px 5px;
+  padding: 15px 20px;  
+}
+
+article > footer {
+  margin: 10px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: smaller;
+  display:flex;
+  justify-content: space-between;
+}
+
+
+.icon-bar {
+  color: #4056A1;
+}
+
+article:hover {
+  box-shadow: 10px 10px #afbbe3;
+}
+
+.icon-bar>i:hover {
+  color: goldenrod;
+}
+
