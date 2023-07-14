@@ -8,11 +8,17 @@ article > header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
  
 }
 
 .user-header {
   font-weight: 200;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+
 }
 
 .user-id {
