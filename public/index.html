@@ -29,9 +29,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
    
-    <!-- import font awesome-->
+    <!-- import libraries-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <body>
     <!-- Top nav bar (fixed) -->
     <nav>
@@ -80,9 +81,9 @@
         const $text = $('#tweet-text').serialize();
         console.log( $text);
       
-  
+        //send serialized data to server
         $.post('/tweets', { text: $text}, function(data, status) {
-          console.log('success!')
+          console.log('success!', data);
         })
       })
     </script>
