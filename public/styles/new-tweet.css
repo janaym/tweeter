@@ -36,3 +36,21 @@
   border: none;
   padding: 5px 10px 5px 10px;
 }
+
+.new-tweet > form > .error-message{
+  background-color: #F1BBA6;
+  color: #F02525;
+  border: 2px solid #F02525;
+  padding: 10px;
+  border-radius: 20px;
+  width: 100%;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 300;
+  font-size: smaller;
+  margin-bottom: 10px;
+  
+
+  display: flex;
+  justify-content: left;
+  gap: 10px;
+}

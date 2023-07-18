@@ -59,3 +59,13 @@ article:hover {
   color: goldenrod;
 }
 
+.error-message{
+  background-color: #F1BBA6;
+  color: #F02525;
+  width: 100%;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 200;
+  font-size: smaller;
+  margin-bottom: 10px;
+}
+
