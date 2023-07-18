@@ -1,3 +1,8 @@
+.tweet-container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 article {
   border: 3px solid #545149;
   margin-top: 20px

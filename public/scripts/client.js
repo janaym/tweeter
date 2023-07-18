@@ -89,7 +89,7 @@ $(document).ready(function (){
   $('#new-tweet').on('submit', function () {
     event.preventDefault();
     
-    const $text = $('#tweet-text').val();
+    const $text = $('#tweet-text').text();
     //console.log( $text);
 
     if(!validateForm($text))    {
