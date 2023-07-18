@@ -14,6 +14,7 @@ const createTweetElement = function(tweet) {
   const userHandle = tweet.user.handle;
   const userAvatar = tweet.user.avatars;
   const tweetContent = tweet.content.text
+  console.log(tweetContent)
 
   //get date difference
 
@@ -56,18 +57,51 @@ const renderTweets = function (tweets){
   }
 }
 
+function validateForm(tweet) {
+  event.preventDefault()
+
+  if (!tweet) {
+    alert("Name must be filled out");
+    return false;
+  }
+  if (tweet.length > 140) {
+    //console.log('failed validation')
+    alert("Tweet is too long");
+    return false;
+  }
+  //console.log('validation passed')
+  return true;
+}
+
+const loadTweets = function () {
+  const data = $.get('/tweets', function (data, status) {
+    //console.log(data)
+    renderTweets(data);
+  })
+  
+  
+};
 
 
 $(document).ready(function (){
-  
-  console.log('hello! from outside');
-  const loadTweets = function () {
-    const data = $.get('/tweets', function (data, status) {
-    renderTweets(data);
+
+  //post new tweets to /tweets
+  $('#new-tweet').on('submit', function () {
+    event.preventDefault();
+    
+    const $text = $('#tweet-text').val();
+    //console.log( $text);
+
+    if(!validateForm($text))    {
+      $('#tweet-text').val('')
+      return;
+    }
+    //send serialized data to server
+    $.post('/tweets', { text: $text}, function(data, status) {
+      //console.log('success!', data);
     })
-    
-    
-  };
+  })
+
   loadTweets();
 
 });

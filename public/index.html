@@ -59,7 +59,7 @@
     <!-- Form to create new tweet -->
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      <form  id="new-tweet" action="/tweets" method="post">
+      <form  id="new-tweet" name="new-tweet" action="/tweets">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
         <div>
@@ -75,18 +75,7 @@
     </section>
   </main>
 
-    <script>
-      $('#new-tweet').on('submit', function () {
-        event.preventDefault();
-        const $text = $('#tweet-text').serialize();
-        console.log( $text);
-      
-        //send serialized data to server
-        $.post('/tweets', { text: $text}, function(data, status) {
-          console.log('success!', data);
-        })
-      })
-    </script>
+
 
  </body>
 </html>
