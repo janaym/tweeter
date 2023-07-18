@@ -99,7 +99,10 @@ $(document).ready(function (){
     //send serialized data to server
     $.post('/tweets', { text: $text}, function(data, status) {
       //console.log('success!', data);
+      loadTweets();
     })
+
+    
   })
 
   loadTweets();
