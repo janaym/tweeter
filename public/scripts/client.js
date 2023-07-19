@@ -60,16 +60,21 @@ const renderTweets = function (tweets){
 function validateForm(tweet) {
   event.preventDefault()
 
+  $error = $('.error-message');
+
   if (!tweet) {
-    alert("Name must be filled out");
+    $error.children('span').text("Looks like you forgot to say something!");
+    $error.slideDown();
+    
     return false;
   }
   if (tweet.length > 140) {
-    //console.log('failed validation')
-    alert("Tweet is too long");
+
+    $error.children('span').text("Oops! Too many characters!")
+    $error.slideDown();
     return false;
   }
-  //console.log('validation passed')
+  console.log('validation passed')
   return true;
 }
 
@@ -88,9 +93,10 @@ $(document).ready(function (){
   //post new tweets to /tweets
   $('#new-tweet').on('submit', function () {
     event.preventDefault();
-    
-    const $text = $('#tweet-text').text();
-    //console.log( $text);
+    $('.error-message').val('')
+    $('.error-message').slideUp();
+    const $text = $('#tweet-text').val();
+    console.log( $text);
 
     if(!validateForm($text))    {
       $('#tweet-text').val('')
@@ -100,6 +106,7 @@ $(document).ready(function (){
     $.post('/tweets', { text: $text}, function(data, status) {
       //console.log('success!', data);
       loadTweets();
+      $('#tweet-text').val('')
     })
 
     

@@ -5,8 +5,9 @@ $(document).ready(function() {
     const currentTweet = $(this).val();
     const tweetLen = currentTweet.length;
 
+
     //target counter 
-    const counter = $(this).next().children('output'); 
+    const counter = $(this).parent().children('footer').children('output'); 
 
     if(tweetLen < 140) {
       counter.css('color', '#545149');

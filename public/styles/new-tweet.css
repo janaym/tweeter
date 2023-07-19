@@ -8,7 +8,7 @@
   flex-direction: column;
 }
 
-.new-tweet > form > div {
+.new-tweet > form > footer {
   display: flex;
   justify-content: space-between;
   font-family: Bungee, sans-serif;
@@ -50,7 +50,8 @@
   margin-bottom: 10px;
   
 
-  display: flex;
+  display: none;
   justify-content: left;
   gap: 10px;
+
 }
