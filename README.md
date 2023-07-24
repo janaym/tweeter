@@ -11,12 +11,12 @@ Tweeter is a simple, AJAX-based single-page Twitter clone, made as a front-end d
 4. Go to <http://localhost:8080/> in your browser.
 
 ## Final Product
-**Mobile View:**
-![Tablet/Mobile view](./public/images/mobile.png)
-**Desktop View**
-!["Desktop view"](./public/images/desktop.png)
-**Character Counter**
-!['Character counter](./public/images/counter.png)
+**Mobile View:**\
+![Tablet/Mobile view](./public/images/mobile.png)\
+**Desktop View**\
+!["Desktop view"](./public/images/desktop.png)\
+**Character Counter**\
+!['Character counter](./public/images/counter.png)\
 
 ## Dependencies
 
