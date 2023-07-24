@@ -19,6 +19,8 @@ $(document).ready(function() {
     counter.css('color', 'red');
     counter.text(charOverflow);
   })
+  
+
 
 
 })

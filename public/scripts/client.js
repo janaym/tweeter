@@ -13,8 +13,8 @@ const createTweetElement = function(tweet) {
   const userName = tweet.user.name;
   const userHandle = tweet.user.handle;
   const userAvatar = tweet.user.avatars;
-  const tweetContent = tweet.content.text
-  console.log(tweetContent)
+  const tweetContent = tweet.content.text;
+
 
   //get date difference
 
@@ -31,7 +31,7 @@ const createTweetElement = function(tweet) {
         <span class="user-id">${userHandle}</span>
       </header>
 
-    <p>${tweetContent}</p>
+    <p>${escape(tweetContent)}</p>
 
     <footer>
       <span>${timeAgo}</span>
@@ -48,9 +48,17 @@ const createTweetElement = function(tweet) {
   return $tweet
 }
 
+
+//takes in a string and escapes it to prevent cross-site scripting
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 //takes in an array of tweets and appends them to the tweet container in our index.html file
 const renderTweets = function (tweets){
-  console.log(tweets)
+  //console.log(tweets)
   for(tweet of tweets) {
     const $tweetElement = createTweetElement(tweet);
     $('.tweet-container').append($tweetElement);
@@ -74,7 +82,7 @@ function validateForm(tweet) {
     $error.slideDown();
     return false;
   }
-  console.log('validation passed')
+  //console.log('validation passed')
   return true;
 }
 
@@ -88,13 +96,17 @@ const loadTweets = function () {
 };
 
 
+
+
 $(document).ready(function (){
 
   //post new tweets to /tweets
   $('#new-tweet').on('submit', function () {
     event.preventDefault();
-    $('.error-message').val('')
+    const counter = $(this).children('footer').children('footer').children('output');
+
     $('.error-message').slideUp();
+
     const $text = $('#tweet-text').val();
     console.log( $text);
 

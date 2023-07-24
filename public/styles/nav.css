@@ -21,3 +21,10 @@ nav > span {
 #logo {
   font-family: Bungee, sans-serif;
  }
+
+ @media only screen and (max-width: 1024px) {
+  nav {
+    position:absolute;
+    background-color: transparent;
+  }
+ }
