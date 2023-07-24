@@ -1,15 +1,15 @@
 $(document).ready(function() {
-  console.log("within callback!")
+  console.log("within callback!");
 
   $("#tweet-text").on('input', function() {
     const currentTweet = $(this).val();
     const tweetLen = currentTweet.length;
 
 
-    //target counter 
-    const counter = $(this).parent().children('footer').children('output'); 
+    //target counter
+    const counter = $(this).parent().children('footer').children('output');
 
-    if(tweetLen < 140) {
+    if (tweetLen < 140) {
       counter.css('color', '#545149');
       counter.text(tweetLen);
       return;
@@ -18,11 +18,11 @@ $(document).ready(function() {
     const charOverflow = 140 - tweetLen;
     counter.css('color', 'red');
     counter.text(charOverflow);
-  })
+  });
   
 
 
 
-})
+});
 
 

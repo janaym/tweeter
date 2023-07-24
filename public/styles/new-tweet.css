@@ -37,6 +37,7 @@
   padding: 5px 10px 5px 10px;
 }
 
+/* style error message slide down */
 .new-tweet > form > .error-message{
   background-color: #F1BBA6;
   color: #F02525;
@@ -48,10 +49,7 @@
   font-weight: 300;
   font-size: smaller;
   margin-bottom: 10px;
-  
-
   display: none;
   justify-content: left;
   gap: 10px;
-
 }

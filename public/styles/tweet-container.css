@@ -3,6 +3,9 @@
   flex-direction: column-reverse;
 }
 
+
+/* tweet layout styling */
+
 article {
   border: 3px solid #545149;
   margin-top: 20px
@@ -13,8 +16,6 @@ article > header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
- 
 }
 
 .user-header {
@@ -22,8 +23,6 @@ article > header {
   display: flex;
   align-items: center;
   gap: 10px;
-
-
 }
 
 .user-id {
@@ -46,10 +45,11 @@ article > footer {
   justify-content: space-between;
 }
 
-
 .icon-bar {
   color: #4056A1;
 }
+
+/* create hover effects on tweet box and icons */
 
 article:hover {
   box-shadow: 10px 10px #afbbe3;

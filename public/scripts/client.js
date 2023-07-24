@@ -17,10 +17,10 @@ const createTweetElement = function(tweet) {
 
 
   //get date difference
-
   const tweetDate = tweet.created_at;
   const timeAgo = timeago.format(tweetDate);
 
+  //create tweet
   const $tweet = `
     <article>
       <header>
@@ -45,85 +45,80 @@ const createTweetElement = function(tweet) {
   </article> 
   `;
 
-  return $tweet
-}
+  return $tweet;
+};
 
 
 //takes in a string and escapes it to prevent cross-site scripting
-const escape = function (str) {
+const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
 //takes in an array of tweets and appends them to the tweet container in our index.html file
-const renderTweets = function (tweets){
-  //console.log(tweets)
-  for(tweet of tweets) {
+const renderTweets = function(tweets) {
+  for (tweet of tweets) {
     const $tweetElement = createTweetElement(tweet);
     $('.tweet-container').append($tweetElement);
   }
-}
+};
 
+
+//takes in tweet content string. Returns false if it is either empty or over 140 characters. Returns true otherwise
 function validateForm(tweet) {
-  event.preventDefault()
+  event.preventDefault();
 
   $error = $('.error-message');
 
   if (!tweet) {
     $error.children('span').text("Looks like you forgot to say something!");
     $error.slideDown();
-    
     return false;
   }
-  if (tweet.length > 140) {
 
-    $error.children('span').text("Oops! Too many characters!")
+  if (tweet.length > 140) {
+    $error.children('span').text("Oops! Too many characters!");
     $error.slideDown();
     return false;
   }
-  //console.log('validation passed')
   return true;
 }
 
-const loadTweets = function () {
-  const data = $.get('/tweets', function (data, status) {
-    //console.log(data)
+
+//fetches all tweets from the /tweets endpoint and sends them to be rendered.
+const loadTweets = function() {
+  const data = $.get('/tweets', function(data, status) {
     renderTweets(data);
-  })
-  
-  
+  });
 };
 
 
 
 
-$(document).ready(function (){
+$(document).ready(function() {
 
   //post new tweets to /tweets
-  $('#new-tweet').on('submit', function () {
+  $('#new-tweet').on('submit', function() {
     event.preventDefault();
-    const counter = $(this).children('footer').children('footer').children('output');
 
+    //get rid of any previous error messages
     $('.error-message').slideUp();
 
     const $text = $('#tweet-text').val();
-    console.log( $text);
-
-    if(!validateForm($text))    {
-      $('#tweet-text').val('')
+ 
+    if (!validateForm($text))    {
+      $('#tweet-text').val('');
       return;
     }
     //send serialized data to server
     $.post('/tweets', { text: $text}, function(data, status) {
       //console.log('success!', data);
       loadTweets();
-      $('#tweet-text').val('')
-    })
-
-    
-  })
-
+      $('#tweet-text').val('');
+    });
+  });
+  
+  //loads all tweets currently in the /tweets endpoint
   loadTweets();
-
 });

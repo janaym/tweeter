@@ -20,8 +20,6 @@ html {
  * Global layout stuff
  */
 
-
-
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -40,6 +38,13 @@ main {
   margin-top: 1.5em;
 }
 
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+
+
+ /* For desktop users */
 @media only screen and (min-width: 1024px) {
   .container {
     width: 60%;
@@ -54,13 +59,6 @@ main {
     margin: 0 auto;
     max-width: 2000px;
   }
-
-
-
 }
 
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
 
