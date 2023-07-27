@@ -114,7 +114,13 @@ $(document).ready(function() {
     //send serialized data to server
     $.post('/tweets', { text: $text}, function(data, status) {
       //console.log('success!', data);
-      loadTweets();
+      const tweets = $.get('/tweets', function(data, status) {
+        console.log(data, typeof(data))
+        const mostRecentTweet = data.reverse()[0];
+        console.log(mostRecentTweet);
+        renderTweets([mostRecentTweet])
+      })
+      
       $('#tweet-text').val('');
     });
   });
