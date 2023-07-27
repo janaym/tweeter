@@ -107,17 +107,17 @@ $(document).ready(function() {
 
     const $text = $('#tweet-text').val();
  
-    if (!validateForm($text))    {
-      $('#tweet-text').val('');
+    if (!validateForm($text)) {
       return;
     }
     //send serialized data to server
     $.post('/tweets', { text: $text}, function(data, status) {
-      //console.log('success!', data);
+
+      //get tweets and find the most recent one
       const tweets = $.get('/tweets', function(data, status) {
-        console.log(data, typeof(data))
         const mostRecentTweet = data.reverse()[0];
-        console.log(mostRecentTweet);
+        
+        //render only the most recent tweet
         renderTweets([mostRecentTweet])
       })
       
