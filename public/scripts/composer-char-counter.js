@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  console.log("within callback!");
+
 
   $("#tweet-text").on('input', function() {
     const currentTweet = $(this).val();
