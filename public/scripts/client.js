@@ -114,14 +114,16 @@ $(document).ready(function() {
     $.post('/tweets', { text: $text}, function(data, status) {
 
       //get tweets and find the most recent one
-      const tweets = $.get('/tweets', function(data, status) {
+      $.get('/tweets', function(data, status) {
         const mostRecentTweet = data.reverse()[0];
         
         //render only the most recent tweet
         renderTweets([mostRecentTweet])
       })
       
+      //clear form and reset counter to zero
       $('#tweet-text').val('');
+      $('.counter').val(0);
     });
   });
   
