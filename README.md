@@ -1,6 +1,6 @@
 # Tweeter Project
 
-Tweeter is a simple, AJAX-based single-page Twitter clone, made as a front-end development project. Some starter back-end code was provided and is contained within this repository.
+Tweeter is a simple, AJAX-based single-page Twitter clone, made for users to share whatever is on their minds to the rest of the world!
 
 ## Getting Started
 
